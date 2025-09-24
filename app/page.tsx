@@ -29,10 +29,13 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-6 py-8 relative z-10 h-full">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center h-full">
             <div>
-              <h1 className="text-4xl md:text-5xl font-bold mb-6">
+              <h1 className="text-4xl md:text-5xl font-bold mb-4">
                 Assessments in Secure Centers
               </h1>
-             
+              <p className="text-lg text-gray-200 mb-8 max-w-lg">
+                Validate skills with our industry-leading, proctored assessment
+                platform designed for accuracy and integrity.
+              </p>
               <Link
                 href="/services"
                 className="inline-flex items-center justify-center bg-transparent border-2 border-white text-white px-8 py-3 rounded-full font-medium hover:bg-white hover:text-[#00418d] transition-all duration-300"
@@ -41,7 +44,7 @@ export default function HomePage() {
               </Link>
             </div>
 
-            <div className="realative flex justify-center items-ce">
+            <div className="flex justify-center items-center">
               <Image
                 src="/images/homepage/home_globe.gif"
                 alt="SkillKwiz assessment platform"
@@ -54,7 +57,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Overlapping Content Section with Curved Top */}
+      {/* Overlapping Content Section */}
       <div className="relative bg-white curved-top z-fix">
         <div className="w-full -mt-[25vh] md:-mt-[30vh]">
           <Image
