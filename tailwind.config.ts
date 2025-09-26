@@ -15,11 +15,30 @@ const config: Config = {
           '0%, 100%': { transform: 'translateY(0px)' },
           '50%': { transform: 'translateY(-10px)' },
         },
+        // --- START: Added for fade-in animations ---
+        fadeInLeft: {
+          "0%": { opacity: "0", transform: "translateX(-20px)" },
+          "100%": { opacity: "1", transform: "translateX(0)" },
+        },
+        fadeInRight: {
+          "0%": { opacity: "0", transform: "translateX(20px)" },
+          "100%": { opacity: "1", transform: "translateX(0)" },
+        },
+        fadeInUp: {
+          "0%": { opacity: "0", transform: "translateY(20px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
+        },
+        // --- END: Added for fade-in animations ---
       },
       animation: {
         float: 'float 4s ease-in-out infinite',
         'float-delay-1': 'float 4s ease-in-out infinite 1s',
         'float-delay-2': 'float 4s ease-in-out infinite 2s',
+        // --- START: Added for fade-in animations ---
+        fadeInLeft: "fadeInLeft 0.8s ease-out forwards",
+        fadeInRight: "fadeInRight 0.8s ease-out forwards",
+        fadeInUp: "fadeInUp 0.8s ease-out forwards",
+        // --- END: Added for fade-in animations ---
       },
       colors: {
         border: "hsl(var(--border))",
@@ -89,4 +108,3 @@ const config: Config = {
 }
 
 export default config
-

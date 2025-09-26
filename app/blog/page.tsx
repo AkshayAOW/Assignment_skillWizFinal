@@ -1,7 +1,8 @@
 "use client";
 import Image from "next/image";
 import { useState } from "react";
-import { Download } from "lucide-react";
+
+
 
 export default function BlogPage() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
@@ -16,19 +17,19 @@ export default function BlogPage() {
       img: "/images/blogpage/1.png",
       title: "The Importance of Upskilling in Today's Job Market",
       subtitle: "Why Upskilling Matters in 2025",
-      downloadUrl: "/downloads/dummy-report.pdf",
+      downloadUrl: "/downloads/dummy-report.pdf", 
     },
     {
       img: "/images/blogpage/2.png",
       title: "How Gamified Learning Enhances Skill Retention",
       subtitle: "The Psychology Behind Gamification",
-      downloadUrl: "/downloads/dummy-report.pdf",
+      downloadUrl: "/downloads/dummy-report.pdf", 
     },
     {
       img: "/images/blogpage/3.png",
       title: "Soft Skills vs. Hard Skills: What Matters More?",
       subtitle: "The Difference Between Soft and Hard Skills",
-      downloadUrl: "/downloads/dummy-report.pdf",
+      downloadUrl: "/downloads/dummy-report.pdf", 
     },
   ];
   return (
@@ -57,7 +58,7 @@ export default function BlogPage() {
               {blogPosts.map((post, index) => (
                 <div
                   key={index}
-                  className="flex flex-col group cursor-pointer"
+                  className="flex flex-col group"
                   onMouseEnter={() => setHoveredIndex(index)}
                   onMouseLeave={() => setHoveredIndex(null)}
                 >
@@ -71,36 +72,21 @@ export default function BlogPage() {
                     />
                   </div>
                   <h3 className="text-lg font-bold mb-1">{post.title}</h3>
-                  <p className="text-sm text-[#00418d] font-medium">
+                  
+                  {/* Subtitle is now the download link */}
+                  <a
+                    href={post.downloadUrl}
+                    download
+                    className="text-sm text-[#00418d] font-medium hover:underline cursor-pointer"
+                  >
                     {post.subtitle}
-                  </p>
+                  </a>
 
-               { /* download link */}
-                  {post.downloadUrl && (
-                    <a
-                      href={post.downloadUrl}
-                      download
-                      onClick={(e) => e.stopPropagation()}
-                      className="inline-flex items-center gap-2 text-gray-500 hover:text-[#00418d] font-semibold text-sm z-10 mt-4 self-start"
-                    >
-                      <Download size={16} />
-                      Download File
-                    </a>
-                  )}
+                  {/* The old download link has been removed */}
                 </div>
               ))}
             </div>
           </div>
-
-          {/* Filter Buttons */}
-          {/* <div className="flex justify-center gap-4 mb-12">
-            <button className="px-8 py-2 bg-[#00418d] text-white rounded-full">
-              All Posts
-            </button>
-            <button className="px-8 py-2 bg-[#c3dfff] text-[#00418d] rounded-full">
-              Latest
-            </button>
-          </div> */}
 
           {/* Secondary Blog Posts */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
